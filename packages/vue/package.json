@@ -1,0 +1,31 @@
+{
+  "name": "@my-org/vue",
+  "version": "0.0.1",
+  "description": "Vue 3 wrapper for @my-org/core design system components",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0",
+    "@my-org/core": "^0.0.1"
+  },
+  "peerDependenciesMeta": {
+    "@my-org/core": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@my-org/core": "workspace:^",
+    "vue": "^3.4.0",
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT",
+  "sideEffects": false
+}

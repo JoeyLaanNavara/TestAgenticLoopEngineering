@@ -1,0 +1,27 @@
+{
+  "name": "my-component-library-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "lint": "nx run-many --target=lint --all",
+    "storybook": "nx run storybook:storybook",
+    "storybook:build": "nx run storybook:build-storybook",
+    "build:core": "nx build core",
+    "build:core:dev": "nx run core:build:dev",
+    "dev": "nx run core:start",
+    "test:core": "nx test core",
+    "test:e2e": "nx run core:test:e2e"
+  },
+  "devDependencies": {
+    "@nx/workspace": "^20.0.0",
+    "nx": "^20.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc"
+}

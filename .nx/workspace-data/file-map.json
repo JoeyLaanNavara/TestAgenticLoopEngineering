@@ -1,0 +1,456 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.8.4",
+  "pathMappings": {
+    "@my-org/core": [
+      "packages/core/src/index.ts"
+    ],
+    "@my-org/angular": [
+      "packages/angular/src/index.ts"
+    ],
+    "@my-org/react": [
+      "packages/react/src/index.ts"
+    ],
+    "@my-org/vue": [
+      "packages/vue/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".claude/skills/structured-handoff/SKILL.md",
+        "hash": "9001696172893641455"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "14743000810602433389"
+      },
+      {
+        "file": ".claude/skills/stencil-testing/SKILL.md",
+        "hash": "16359835552626288760"
+      },
+      {
+        "file": ".claude/skills/stencil-unit-test/references/unit-test-patterns.md",
+        "hash": "4265627379576683485"
+      },
+      {
+        "file": ".claude/skills/stencil-issue-tracker/SKILL.md",
+        "hash": "15258783160508806051"
+      },
+      {
+        "file": "CLAUDE.md",
+        "hash": "2386161861615345596"
+      },
+      {
+        "file": "package.json",
+        "hash": "14811118491301378877"
+      },
+      {
+        "file": ".claude/skills/storybook-component/SKILL.md",
+        "hash": "236253381864344921"
+      },
+      {
+        "file": ".claude/skills/stencil-component-build/SKILL.md",
+        "hash": "266617293585767922"
+      },
+      {
+        "file": ".claude/skills/structured-handoff/references/HANDOFF_INDEX.md",
+        "hash": "10895696693120346657"
+      },
+      {
+        "file": ".claude/skills/stencil-e2e-test/references/playwright-patterns.md",
+        "hash": "17018831376114716420"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "14977591499973151183"
+      },
+      {
+        "file": ".claude/skills/stencil-unit-test/SKILL.md",
+        "hash": "8414066851744440046"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "15261818387512057953"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "7305247897161806016"
+      },
+      {
+        "file": ".claude/skills/component-library-mcp/SKILL.md",
+        "hash": "11298697153740419153"
+      },
+      {
+        "file": "DESIGN.md",
+        "hash": "1455157821413797604"
+      },
+      {
+        "file": ".claude/skills/stencil-issue-tracker/references/known-issues.md",
+        "hash": "6244918541081768287"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "1978261448481785746"
+      },
+      {
+        "file": ".claude/commands/build-component.md",
+        "hash": "14590432336366470818"
+      },
+      {
+        "file": ".claude/skills/framework-integration-testing/SKILL.md",
+        "hash": "5923793160941497233"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "3375886859247606486"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1076048326898268193"
+      },
+      {
+        "file": ".claude/skills/stencil-bootstrap/SKILL.md",
+        "hash": "5798554064165176932"
+      },
+      {
+        "file": ".claude/skills/component-library-mcp/references/mcp-tools-reference.md",
+        "hash": "14105545424454844983"
+      },
+      {
+        "file": ".claude/skills/stencil-e2e-test/SKILL.md",
+        "hash": "1963681604515144634"
+      },
+      {
+        "file": ".claude/skills/stencil-testing/references/testing-patterns.md",
+        "hash": "7808620224082394856"
+      },
+      {
+        "file": ".claude/skills/framework-integration-testing/references/test-patterns.md",
+        "hash": "12877868914978220978"
+      }
+    ],
+    "projectFileMap": {
+      "react": [
+        {
+          "file": "packages/react/package.json",
+          "hash": "7370461485920431724",
+          "deps": [
+            "npm:react",
+            "npm:react-dom",
+            "core",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "packages/react/project.json",
+          "hash": "14233564363988222745"
+        },
+        {
+          "file": "packages/react/src/index.ts",
+          "hash": "1122250921657481753"
+        },
+        {
+          "file": "packages/react/tsconfig.json",
+          "hash": "6305557933962412792"
+        }
+      ],
+      "angular-test": [
+        {
+          "file": "apps/angular-test/jest.config.ts",
+          "hash": "11603302633409676303",
+          "deps": [
+            "npm:jest"
+          ]
+        },
+        {
+          "file": "apps/angular-test/package.json",
+          "hash": "12364090469433255112",
+          "deps": [
+            "npm:@types/jest",
+            "npm:jest",
+            "npm:typescript",
+            "angular",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/angular-test/project.json",
+          "hash": "6497797947600659382"
+        },
+        {
+          "file": "apps/angular-test/setup-jest.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "apps/angular-test/src/__mocks__/my-org-core-mock.ts",
+          "hash": "6965650116483372642"
+        },
+        {
+          "file": "apps/angular-test/src/tests/ds-button.spec.ts",
+          "hash": "2432830558168446082",
+          "deps": [
+            "npm:@angular/core",
+            "angular"
+          ]
+        },
+        {
+          "file": "apps/angular-test/tsconfig.json",
+          "hash": "11494593153743846512"
+        },
+        {
+          "file": "apps/angular-test/tsconfig.spec.json",
+          "hash": "7692885708671606242"
+        }
+      ],
+      "angular": [
+        {
+          "file": "packages/angular/package.json",
+          "hash": "3167163996031247915",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "core",
+            "npm:ng-packagr"
+          ]
+        },
+        {
+          "file": "packages/angular/project.json",
+          "hash": "2667827000576734685"
+        },
+        {
+          "file": "packages/angular/src/directives/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/angular/src/directives/angular-component-lib/utils.ts",
+          "hash": "10700565633119775614",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "packages/angular/src/index.ts",
+          "hash": "7653384026540974274"
+        },
+        {
+          "file": "packages/angular/tsconfig.json",
+          "hash": "10988887949387357906"
+        }
+      ],
+      "react-test": [
+        {
+          "file": "apps/react-test/package.json",
+          "hash": "6662728901146462220",
+          "deps": [
+            "npm:@testing-library/user-event",
+            "npm:@testing-library/jest-dom",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:typescript",
+            "react",
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/react-test/project.json",
+          "hash": "12281234657122262915"
+        },
+        {
+          "file": "apps/react-test/src/setup.ts",
+          "hash": "4941352530169676329",
+          "deps": [
+            "npm:@testing-library/jest-dom"
+          ]
+        },
+        {
+          "file": "apps/react-test/src/tests/ds-button.spec.tsx",
+          "hash": "1680315917703452963",
+          "deps": [
+            "npm:react",
+            "react"
+          ]
+        },
+        {
+          "file": "apps/react-test/tsconfig.json",
+          "hash": "7698116087882638151"
+        },
+        {
+          "file": "apps/react-test/vitest.config.ts",
+          "hash": "11641952752208182493"
+        }
+      ],
+      "storybook": [
+        {
+          "file": "apps/storybook/.storybook/main.ts",
+          "hash": "16479875231964150796",
+          "deps": [
+            "npm:@storybook/web-components-vite"
+          ]
+        },
+        {
+          "file": "apps/storybook/.storybook/preview.ts",
+          "hash": "4836481790088752482",
+          "deps": [
+            "npm:@storybook/web-components",
+            "core"
+          ]
+        },
+        {
+          "file": "apps/storybook/package.json",
+          "hash": "12387395890140251428",
+          "deps": [
+            "npm:@storybook/web-components",
+            "npm:@storybook/web-components-vite",
+            "npm:@storybook/addon-essentials",
+            "npm:@storybook/addon-a11y",
+            "npm:storybook",
+            "npm:vite",
+            "core",
+            "npm:lit"
+          ]
+        },
+        {
+          "file": "apps/storybook/project.json",
+          "hash": "14734114323459253755"
+        },
+        {
+          "file": "apps/storybook/stories/ds-button.stories.ts",
+          "hash": "13807473695735202165",
+          "deps": [
+            "npm:@storybook/web-components",
+            "npm:lit"
+          ]
+        }
+      ],
+      "vue": [
+        {
+          "file": "packages/vue/package.json",
+          "hash": "7233334830414813203",
+          "deps": [
+            "npm:vue",
+            "core",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "packages/vue/project.json",
+          "hash": "591304041614076851"
+        },
+        {
+          "file": "packages/vue/src/index.ts",
+          "hash": "14536267634179948050"
+        },
+        {
+          "file": "packages/vue/tsconfig.json",
+          "hash": "3808898585100494968"
+        }
+      ],
+      "core": [
+        {
+          "file": "packages/core/package.json",
+          "hash": "7346397894842748242",
+          "deps": [
+            "npm:@stencil/angular-output-target",
+            "npm:@stencil/react-output-target",
+            "npm:@stencil/vue-output-target",
+            "npm:@types/jest",
+            "npm:jest",
+            "npm:jest-cli"
+          ]
+        },
+        {
+          "file": "packages/core/project.json",
+          "hash": "475883207586895645"
+        },
+        {
+          "file": "packages/core/src/components.d.ts",
+          "hash": "10726530415159153185"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.css",
+          "hash": "2603258978421972175"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.e2e.ts",
+          "hash": "14563725424716747426"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.spec.tsx",
+          "hash": "7757427076879378495"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.tsx",
+          "hash": "9734437877616587759"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/readme.md",
+          "hash": "13264996796628957873"
+        },
+        {
+          "file": "packages/core/src/global/global.css",
+          "hash": "15076226829454827477"
+        },
+        {
+          "file": "packages/core/src/index.ts",
+          "hash": "1595832445444187531"
+        },
+        {
+          "file": "packages/core/stencil.config.ts",
+          "hash": "16987664482319333835",
+          "deps": [
+            "npm:@stencil/angular-output-target",
+            "npm:@stencil/react-output-target",
+            "npm:@stencil/vue-output-target"
+          ]
+        },
+        {
+          "file": "packages/core/tsconfig.json",
+          "hash": "12695108649062333821"
+        }
+      ],
+      "vue-test": [
+        {
+          "file": "apps/vue-test/package.json",
+          "hash": "12755738139938096301",
+          "deps": [
+            "npm:typescript",
+            "vue",
+            "npm:vue"
+          ]
+        },
+        {
+          "file": "apps/vue-test/project.json",
+          "hash": "8007824462980770319"
+        },
+        {
+          "file": "apps/vue-test/src/setup.ts",
+          "hash": "17078798935890258829"
+        },
+        {
+          "file": "apps/vue-test/src/tests/ds-button.spec.ts",
+          "hash": "10671996901513630205",
+          "deps": [
+            "npm:vue",
+            "vue"
+          ]
+        },
+        {
+          "file": "apps/vue-test/tsconfig.json",
+          "hash": "14071119327056870591"
+        },
+        {
+          "file": "apps/vue-test/vitest.config.ts",
+          "hash": "11696317821689718464"
+        }
+      ]
+    }
+  }
+}

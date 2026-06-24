@@ -1,0 +1,16 @@
+{
+  "name": "react-test",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react-test/src",
+  "projectType": "application",
+  "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec vitest run",
+        "cwd": "{projectRoot}"
+      }
+    }
+  },
+  "tags": ["scope:react", "type:integration-test"]
+}

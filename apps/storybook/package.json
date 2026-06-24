@@ -1,0 +1,20 @@
+{
+  "name": "@my-org/storybook",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Storybook for @my-org design system components",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/web-components": "^8.6.18",
+    "@storybook/web-components-vite": "^8.6.18",
+    "@storybook/addon-essentials": "^8.6.18",
+    "@storybook/addon-a11y": "^8.6.18",
+    "storybook": "^8.6.18",
+    "vite": "^5.0.0",
+    "@my-org/core": "workspace:^",
+    "lit": "^3.0.0"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/core/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec stencil build",
+        "cwd": "packages/core"
+      }
+    },
+    "build:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec stencil build --dev",
+        "cwd": "packages/core"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec stencil test --spec",
+        "cwd": "packages/core"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec stencil build --dev --watch --serve",
+        "cwd": "packages/core"
+      }
+    },
+    "test:e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec playwright test",
+        "cwd": "packages/core"
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": ["scope:core", "type:lib"]
+}

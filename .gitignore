@@ -1,1 +1,24 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+loader/
+www/
+packages/angular/src/directives/proxies.ts
+packages/angular/src/directives/index.ts
+packages/react/src/components/stencil-generated/
+packages/vue/src/components/stencil-generated/
+
+# Storybook
+storybook-static/
+
+# NX
+.nx/cache/
+
+# Misc
 .DS_Store
+*.log
+.env
+.env.local

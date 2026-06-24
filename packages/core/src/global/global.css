@@ -1,0 +1,38 @@
+/* Design System Global CSS Variables */
+:root {
+  /* Colors */
+  --ds-color-primary: #0070f3;
+  --ds-color-primary-hover: #0051cc;
+  --ds-color-primary-active: #003d99;
+  --ds-color-secondary: #6c757d;
+  --ds-color-success: #28a745;
+  --ds-color-danger: #dc3545;
+  --ds-color-warning: #ffc107;
+  --ds-color-info: #17a2b8;
+
+  /* Typography */
+  --ds-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ds-font-size-sm: 0.875rem;
+  --ds-font-size-md: 1rem;
+  --ds-font-size-lg: 1.125rem;
+
+  /* Spacing */
+  --ds-spacing-xs: 0.25rem;
+  --ds-spacing-sm: 0.5rem;
+  --ds-spacing-md: 1rem;
+  --ds-spacing-lg: 1.5rem;
+  --ds-spacing-xl: 2rem;
+
+  /* Border */
+  --ds-border-radius-sm: 0.25rem;
+  --ds-border-radius-md: 0.375rem;
+  --ds-border-radius-lg: 0.5rem;
+
+  /* Shadows */
+  --ds-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --ds-transition-speed: 150ms;
+  --ds-transition-easing: ease-in-out;
+}

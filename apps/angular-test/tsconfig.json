@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "CommonJS",
+    "outDir": "dist",
+    "strict": false
+  },
+  "include": ["src", "setup-jest.ts", "jest.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "angular-test",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/angular-test/src",
+  "projectType": "application",
+  "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec jest --passWithNoTests",
+        "cwd": "{projectRoot}"
+      }
+    }
+  },
+  "tags": ["scope:angular", "type:integration-test"]
+}

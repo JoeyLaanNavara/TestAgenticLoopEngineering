@@ -1,0 +1,25 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/storybook",
+  "targets": {
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec storybook dev -p 6006",
+        "cwd": "apps/storybook"
+      },
+      "dependsOn": ["core:build"]
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec storybook build",
+        "cwd": "apps/storybook"
+      },
+      "dependsOn": ["core:build"]
+    }
+  },
+  "tags": ["scope:storybook", "type:app"]
+}

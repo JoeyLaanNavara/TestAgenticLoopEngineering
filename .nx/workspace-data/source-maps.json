@@ -499,6 +499,184 @@
       "nx/target-defaults"
     ]
   },
+  "mcp-server": {
+    "root": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.description": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.script": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.scriptContent": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.runCommand": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.executor": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options.script": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.scriptContent": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.runCommand": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "mcp-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
   "packages/angular": {
     "root": [
       "packages/angular/project.json",

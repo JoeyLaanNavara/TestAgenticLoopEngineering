@@ -23,10 +23,46 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary' | 'danger';
     }
+    interface DsCard {
+        /**
+          * When true the card receives hover/focus styles and emits `dsCardClick`. Sets `role="button"` and `tabindex="0"` automatically.
+          * @default false
+         */
+        "clickable": boolean;
+        /**
+          * Disables the card — suppresses interaction and dims the surface
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * The card heading text. Use the named `header` slot for richer markup.
+          * @default ''
+         */
+        "heading": string;
+        /**
+          * Controls internal padding. Use `none` when the card contains full-bleed media.
+          * @default 'md'
+         */
+        "padding": 'none' | 'sm' | 'md' | 'lg';
+        /**
+          * Secondary text displayed below the heading
+          * @default ''
+         */
+        "subheading": string;
+        /**
+          * Visual variant controlling border and shadow treatment
+          * @default 'default'
+         */
+        "variant": 'default' | 'outlined' | 'elevated';
+    }
 }
 export interface DsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLDsButtonElement;
+}
+export interface DsCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLDsCardElement;
 }
 declare global {
     interface HTMLDsButtonElementEventMap {
@@ -46,8 +82,26 @@ declare global {
         prototype: HTMLDsButtonElement;
         new (): HTMLDsButtonElement;
     };
+    interface HTMLDsCardElementEventMap {
+        "dsCardClick": void;
+    }
+    interface HTMLDsCardElement extends Components.DsCard, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLDsCardElementEventMap>(type: K, listener: (this: HTMLDsCardElement, ev: DsCardCustomEvent<HTMLDsCardElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLDsCardElementEventMap>(type: K, listener: (this: HTMLDsCardElement, ev: DsCardCustomEvent<HTMLDsCardElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLDsCardElement: {
+        prototype: HTMLDsCardElement;
+        new (): HTMLDsCardElement;
+    };
     interface HTMLElementTagNameMap {
         "ds-button": HTMLDsButtonElement;
+        "ds-card": HTMLDsCardElement;
     }
 }
 declare namespace LocalJSX {
@@ -72,15 +126,60 @@ declare namespace LocalJSX {
          */
         "variant"?: 'primary' | 'secondary' | 'danger';
     }
+    interface DsCard {
+        /**
+          * When true the card receives hover/focus styles and emits `dsCardClick`. Sets `role="button"` and `tabindex="0"` automatically.
+          * @default false
+         */
+        "clickable"?: boolean;
+        /**
+          * Disables the card — suppresses interaction and dims the surface
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * The card heading text. Use the named `header` slot for richer markup.
+          * @default ''
+         */
+        "heading"?: string;
+        /**
+          * Emitted when a clickable card is activated (click or Enter/Space keypress)
+         */
+        "onDsCardClick"?: (event: DsCardCustomEvent<void>) => void;
+        /**
+          * Controls internal padding. Use `none` when the card contains full-bleed media.
+          * @default 'md'
+         */
+        "padding"?: 'none' | 'sm' | 'md' | 'lg';
+        /**
+          * Secondary text displayed below the heading
+          * @default ''
+         */
+        "subheading"?: string;
+        /**
+          * Visual variant controlling border and shadow treatment
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'outlined' | 'elevated';
+    }
 
     interface DsButtonAttributes {
         "label": string;
         "variant": 'primary' | 'secondary' | 'danger';
         "disabled": boolean;
     }
+    interface DsCardAttributes {
+        "heading": string;
+        "subheading": string;
+        "variant": 'default' | 'outlined' | 'elevated';
+        "clickable": boolean;
+        "disabled": boolean;
+        "padding": 'none' | 'sm' | 'md' | 'lg';
+    }
 
     interface IntrinsicElements {
         "ds-button": Omit<DsButton, keyof DsButtonAttributes> & { [K in keyof DsButton & keyof DsButtonAttributes]?: DsButton[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `attr:${K}`]?: DsButtonAttributes[K] } & { [K in keyof DsButton & keyof DsButtonAttributes as `prop:${K}`]?: DsButton[K] };
+        "ds-card": Omit<DsCard, keyof DsCardAttributes> & { [K in keyof DsCard & keyof DsCardAttributes]?: DsCard[K] } & { [K in keyof DsCard & keyof DsCardAttributes as `attr:${K}`]?: DsCardAttributes[K] } & { [K in keyof DsCard & keyof DsCardAttributes as `prop:${K}`]?: DsCard[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -88,6 +187,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ds-button": LocalJSX.IntrinsicElements["ds-button"] & JSXBase.HTMLAttributes<HTMLDsButtonElement>;
+            "ds-card": LocalJSX.IntrinsicElements["ds-card"] & JSXBase.HTMLAttributes<HTMLDsCardElement>;
         }
     }
 }

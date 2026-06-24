@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/web-components';
 
-// Import the core web components
+import '@my-org/core/global.css';
 import '@my-org/core/loader';
 import { defineCustomElements } from '@my-org/core/loader';
 defineCustomElements();

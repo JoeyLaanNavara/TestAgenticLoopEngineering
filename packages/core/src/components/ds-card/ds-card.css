@@ -1,0 +1,148 @@
+/**
+ * @prop --ds-card-bg: Card surface background color
+ * @prop --ds-card-border-color: Border color (used in `outlined` variant and default)
+ * @prop --ds-card-shadow: Resting box shadow
+ * @prop --ds-card-shadow-hover: Box shadow applied on hover for clickable cards
+ * @prop --ds-card-radius: Corner border radius
+ * @prop --ds-card-padding: Internal padding (overridden by the `padding` prop)
+ * @prop --ds-card-heading-color: Color of the heading text
+ * @prop --ds-card-subheading-color: Color of the subheading / body text
+ * @prop --ds-card-divider-color: Color of internal dividers (header/footer borders)
+ */
+
+/* ── Layer 1: component-scoped token declarations ── */
+:host {
+  --ds-card-bg:              var(--ds-color-surface-raised);
+  --ds-card-border-color:    var(--ds-color-border);
+  --ds-card-shadow:          var(--ds-shadow-sm);
+  --ds-card-shadow-hover:    var(--ds-shadow-md);
+  --ds-card-radius:          var(--ds-radius-lg);
+  --ds-card-padding:         var(--ds-space-6);
+  --ds-card-heading-color:   var(--ds-color-text);
+  --ds-card-subheading-color: var(--ds-color-text-subtle);
+  --ds-card-divider-color:   var(--ds-color-border);
+
+  display: block;
+  box-sizing: border-box;
+}
+
+/* ── Layer 2: consume the component tokens ── */
+.ds-card {
+  background-color: var(--ds-card-bg);
+  border: 1px solid var(--ds-card-border-color);
+  border-radius: var(--ds-card-radius);
+  box-shadow: var(--ds-card-shadow);
+  overflow: hidden;
+  transition:
+    box-shadow var(--ds-duration-normal) var(--ds-ease-in-out),
+    transform var(--ds-duration-normal) var(--ds-ease-in-out),
+    border-color var(--ds-duration-normal) var(--ds-ease-in-out);
+}
+
+/* ── Variants ── */
+.ds-card--default {
+  border-color: var(--ds-card-border-color);
+}
+
+.ds-card--outlined {
+  box-shadow: none;
+  border-color: var(--ds-color-border-strong);
+}
+
+.ds-card--elevated {
+  border-color: transparent;
+  box-shadow: var(--ds-shadow-md);
+}
+
+/* ── Padding scale ── */
+.ds-card--pad-none .card__header,
+.ds-card--pad-none .card__body {
+  padding: 0;
+}
+
+.ds-card--pad-sm .card__header,
+.ds-card--pad-sm .card__body {
+  padding: var(--ds-space-3) var(--ds-space-4);
+}
+
+.ds-card--pad-md .card__header,
+.ds-card--pad-md .card__body {
+  padding: var(--ds-space-4) var(--ds-space-6);
+}
+
+.ds-card--pad-lg .card__header,
+.ds-card--pad-lg .card__body {
+  padding: var(--ds-space-6) var(--ds-space-8);
+}
+
+/* ── Header slot / generated header ── */
+.card__header {
+  border-bottom: 1px solid var(--ds-card-divider-color);
+  padding-bottom: var(--ds-space-4);
+  margin-bottom: var(--ds-space-1);
+}
+
+.card__heading {
+  margin: 0;
+  font-family: var(--ds-font-family);
+  font-size: var(--ds-font-size-lg);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: var(--ds-line-height-tight);
+  color: var(--ds-card-heading-color);
+}
+
+.card__subheading {
+  margin: var(--ds-space-1) 0 0;
+  font-family: var(--ds-font-family);
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-regular);
+  line-height: var(--ds-line-height-normal);
+  color: var(--ds-card-subheading-color);
+}
+
+/* ── Body ── */
+.card__body {
+  /* padding handled by pad-* modifier above */
+}
+
+/* ── Footer slot divider ── */
+::slotted([slot="footer"]) {
+  display: block;
+  border-top: 1px solid var(--ds-card-divider-color);
+}
+
+/* ── Interaction states ── */
+
+/* Hover — clickable cards only */
+:host([clickable]:not([disabled])) .ds-card:hover {
+  box-shadow: var(--ds-card-shadow-hover);
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+/* Focus-visible ring — keyboard nav */
+:host([clickable]:not([disabled])) .ds-card:focus-visible,
+:host([clickable]:not([disabled])):focus-visible .ds-card {
+  outline: 2px solid var(--ds-color-primary);
+  outline-offset: 2px;
+}
+
+/* Active / pressed */
+:host([clickable]:not([disabled])) .ds-card:active {
+  transform: translateY(0);
+  box-shadow: var(--ds-card-shadow);
+}
+
+/* Disabled */
+:host([disabled]) {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .ds-card {
+    transition: none;
+  }
+}

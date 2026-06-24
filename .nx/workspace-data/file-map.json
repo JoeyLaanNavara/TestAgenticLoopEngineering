@@ -19,194 +19,253 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".claude/skills/structured-handoff/SKILL.md",
-        "hash": "9001696172893641455"
-      },
-      {
-        "file": ".nvmrc",
-        "hash": "14743000810602433389"
-      },
-      {
-        "file": ".claude/skills/stencil-testing/SKILL.md",
-        "hash": "16359835552626288760"
-      },
-      {
-        "file": ".claude/skills/stencil-unit-test/references/unit-test-patterns.md",
-        "hash": "4265627379576683485"
-      },
-      {
-        "file": ".claude/skills/stencil-issue-tracker/SKILL.md",
-        "hash": "15258783160508806051"
-      },
-      {
-        "file": "CLAUDE.md",
-        "hash": "2386161861615345596"
-      },
-      {
-        "file": "package.json",
-        "hash": "14811118491301378877"
-      },
-      {
-        "file": ".claude/skills/storybook-component/SKILL.md",
-        "hash": "236253381864344921"
-      },
-      {
-        "file": ".claude/skills/stencil-component-build/SKILL.md",
-        "hash": "266617293585767922"
-      },
-      {
-        "file": ".claude/skills/structured-handoff/references/HANDOFF_INDEX.md",
-        "hash": "10895696693120346657"
-      },
-      {
-        "file": ".claude/skills/stencil-e2e-test/references/playwright-patterns.md",
-        "hash": "17018831376114716420"
-      },
-      {
         "file": ".gitignore",
         "hash": "14977591499973151183"
-      },
-      {
-        "file": ".claude/skills/stencil-unit-test/SKILL.md",
-        "hash": "8414066851744440046"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "15261818387512057953"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "7305247897161806016"
-      },
-      {
-        "file": ".claude/skills/component-library-mcp/SKILL.md",
-        "hash": "11298697153740419153"
-      },
-      {
-        "file": "DESIGN.md",
-        "hash": "1455157821413797604"
-      },
-      {
-        "file": ".claude/skills/stencil-issue-tracker/references/known-issues.md",
-        "hash": "6244918541081768287"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "1978261448481785746"
-      },
-      {
-        "file": ".claude/commands/build-component.md",
-        "hash": "14590432336366470818"
-      },
-      {
-        "file": ".claude/skills/framework-integration-testing/SKILL.md",
-        "hash": "5923793160941497233"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "3375886859247606486"
-      },
-      {
-        "file": "nx.json",
-        "hash": "1076048326898268193"
-      },
-      {
-        "file": ".claude/skills/stencil-bootstrap/SKILL.md",
-        "hash": "5798554064165176932"
-      },
-      {
-        "file": ".claude/skills/component-library-mcp/references/mcp-tools-reference.md",
-        "hash": "14105545424454844983"
-      },
-      {
-        "file": ".claude/skills/stencil-e2e-test/SKILL.md",
-        "hash": "1963681604515144634"
       },
       {
         "file": ".claude/skills/stencil-testing/references/testing-patterns.md",
         "hash": "7808620224082394856"
       },
       {
+        "file": ".claude/skills/stencil-e2e-test/SKILL.md",
+        "hash": "1963681604515144634"
+      },
+      {
+        "file": ".claude/skills/structured-handoff/SKILL.md",
+        "hash": "9001696172893641455"
+      },
+      {
+        "file": ".claude/skills/structured-handoff/references/HANDOFF_INDEX.md",
+        "hash": "10895696693120346657"
+      },
+      {
+        "file": ".claude/skills/framework-integration-testing/SKILL.md",
+        "hash": "5923793160941497233"
+      },
+      {
+        "file": ".claude/skills/component-library-mcp/references/mcp-tools-reference.md",
+        "hash": "14105545424454844983"
+      },
+      {
+        "file": ".claude/skills/stencil-component-build/SKILL.md",
+        "hash": "266617293585767922"
+      },
+      {
+        "file": ".claude/settings.json",
+        "hash": "13029846624108561945"
+      },
+      {
+        "file": ".claude/skills/storybook-component/SKILL.md",
+        "hash": "236253381864344921"
+      },
+      {
+        "file": ".claude/skills/stencil-unit-test/references/unit-test-patterns.md",
+        "hash": "4265627379576683485"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "17416571130773066304"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "12244558599086013871"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "7305247897161806016"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "1978261448481785746"
+      },
+      {
+        "file": "package.json",
+        "hash": "14811118491301378877"
+      },
+      {
+        "file": ".claude/skills/stencil-testing/SKILL.md",
+        "hash": "16359835552626288760"
+      },
+      {
+        "file": "DESIGN.md",
+        "hash": "1455157821413797604"
+      },
+      {
+        "file": ".claude/skills/stencil-e2e-test/references/playwright-patterns.md",
+        "hash": "17018831376114716420"
+      },
+      {
+        "file": "CLAUDE.md",
+        "hash": "2386161861615345596"
+      },
+      {
+        "file": ".claude/commands/build-component.md",
+        "hash": "14590432336366470818"
+      },
+      {
+        "file": ".claude/skills/stencil-issue-tracker/references/known-issues.md",
+        "hash": "6244918541081768287"
+      },
+      {
+        "file": ".claude/skills/stencil-issue-tracker/SKILL.md",
+        "hash": "15258783160508806051"
+      },
+      {
         "file": ".claude/skills/framework-integration-testing/references/test-patterns.md",
         "hash": "12877868914978220978"
+      },
+      {
+        "file": ".claude/skills/component-library-mcp/SKILL.md",
+        "hash": "11298697153740419153"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "14743000810602433389"
+      },
+      {
+        "file": ".claude/skills/stencil-bootstrap/SKILL.md",
+        "hash": "5798554064165176932"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1076048326898268193"
+      },
+      {
+        "file": ".claude/skills/stencil-unit-test/SKILL.md",
+        "hash": "8414066851744440046"
       }
     ],
     "projectFileMap": {
-      "react": [
+      "core": [
         {
-          "file": "packages/react/package.json",
-          "hash": "7370461485920431724",
+          "file": "packages/core/e2e/ds-card.e2e.ts",
+          "hash": "6784689179828769256",
           "deps": [
-            "npm:react",
-            "npm:react-dom",
-            "core",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:typescript"
+            "npm:@playwright/test"
           ]
         },
         {
-          "file": "packages/react/project.json",
-          "hash": "14233564363988222745"
-        },
-        {
-          "file": "packages/react/src/index.ts",
-          "hash": "1122250921657481753"
-        },
-        {
-          "file": "packages/react/tsconfig.json",
-          "hash": "6305557933962412792"
-        }
-      ],
-      "angular-test": [
-        {
-          "file": "apps/angular-test/jest.config.ts",
-          "hash": "11603302633409676303",
+          "file": "packages/core/package.json",
+          "hash": "9203488818400119732",
           "deps": [
-            "npm:jest"
-          ]
-        },
-        {
-          "file": "apps/angular-test/package.json",
-          "hash": "12364090469433255112",
-          "deps": [
+            "npm:@playwright/test",
+            "npm:@stencil/angular-output-target",
+            "npm:@stencil/react-output-target",
+            "npm:@stencil/vue-output-target",
             "npm:@types/jest",
             "npm:jest",
-            "npm:typescript",
-            "angular",
-            "npm:@angular/common",
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:zone.js"
+            "npm:jest-cli"
           ]
         },
         {
-          "file": "apps/angular-test/project.json",
-          "hash": "6497797947600659382"
-        },
-        {
-          "file": "apps/angular-test/setup-jest.ts",
-          "hash": "17711435995618823417"
-        },
-        {
-          "file": "apps/angular-test/src/__mocks__/my-org-core-mock.ts",
-          "hash": "6965650116483372642"
-        },
-        {
-          "file": "apps/angular-test/src/tests/ds-button.spec.ts",
-          "hash": "2432830558168446082",
+          "file": "packages/core/playwright.config.ts",
+          "hash": "3512605220266526984",
           "deps": [
-            "npm:@angular/core",
-            "angular"
+            "npm:@playwright/test"
           ]
         },
         {
-          "file": "apps/angular-test/tsconfig.json",
-          "hash": "11494593153743846512"
+          "file": "packages/core/project.json",
+          "hash": "475883207586895645"
         },
         {
-          "file": "apps/angular-test/tsconfig.spec.json",
-          "hash": "7692885708671606242"
+          "file": "packages/core/src/components.d.ts",
+          "hash": "8232004359141561692"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.css",
+          "hash": "2603258978421972175"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.e2e.ts",
+          "hash": "14563725424716747426"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.spec.tsx",
+          "hash": "7757427076879378495"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/ds-button.tsx",
+          "hash": "9734437877616587759"
+        },
+        {
+          "file": "packages/core/src/components/ds-button/readme.md",
+          "hash": "13264996796628957873"
+        },
+        {
+          "file": "packages/core/src/components/ds-card/ds-card.css",
+          "hash": "15958542988528215547"
+        },
+        {
+          "file": "packages/core/src/components/ds-card/ds-card.spec.tsx",
+          "hash": "3738834529215915491"
+        },
+        {
+          "file": "packages/core/src/components/ds-card/ds-card.tsx",
+          "hash": "12945281950547429923"
+        },
+        {
+          "file": "packages/core/src/components/ds-card/index.ts",
+          "hash": "15771105921018018516"
+        },
+        {
+          "file": "packages/core/src/components/ds-card/readme.md",
+          "hash": "11702764769292703448"
+        },
+        {
+          "file": "packages/core/src/components/index.ts",
+          "hash": "16906010263678180298"
+        },
+        {
+          "file": "packages/core/src/global/global.css",
+          "hash": "13440978765090910305"
+        },
+        {
+          "file": "packages/core/src/index.html",
+          "hash": "16157056936283425901"
+        },
+        {
+          "file": "packages/core/src/index.ts",
+          "hash": "1595832445444187531"
+        },
+        {
+          "file": "packages/core/stencil.config.ts",
+          "hash": "16987664482319333835",
+          "deps": [
+            "npm:@stencil/angular-output-target",
+            "npm:@stencil/react-output-target",
+            "npm:@stencil/vue-output-target"
+          ]
+        },
+        {
+          "file": "packages/core/test-results/.last-run.json",
+          "hash": "11141884120100644736"
+        },
+        {
+          "file": "packages/core/tsconfig.json",
+          "hash": "12695108649062333821"
+        }
+      ],
+      "component-library-mcp": [
+        {
+          "file": "mcp-server/package.json",
+          "hash": "14419228952025296472",
+          "deps": [
+            "npm:typescript",
+            "npm:@types/node",
+            "npm:glob@10.5.0"
+          ]
+        },
+        {
+          "file": "mcp-server/src/index.ts",
+          "hash": "489405706619378761",
+          "deps": [
+            "npm:glob@10.5.0"
+          ]
+        },
+        {
+          "file": "mcp-server/tsconfig.json",
+          "hash": "5732853224961428485"
         }
       ],
       "angular": [
@@ -287,133 +346,81 @@
           "hash": "11641952752208182493"
         }
       ],
-      "storybook": [
+      "angular-test": [
         {
-          "file": "apps/storybook/.storybook/main.ts",
-          "hash": "16479875231964150796",
+          "file": "apps/angular-test/jest.config.ts",
+          "hash": "11603302633409676303",
           "deps": [
-            "npm:@storybook/web-components-vite"
+            "npm:jest"
           ]
         },
         {
-          "file": "apps/storybook/.storybook/preview.ts",
-          "hash": "4836481790088752482",
+          "file": "apps/angular-test/package.json",
+          "hash": "12364090469433255112",
           "deps": [
-            "npm:@storybook/web-components",
-            "core"
+            "npm:@types/jest",
+            "npm:jest",
+            "npm:typescript",
+            "angular",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:zone.js"
           ]
         },
         {
-          "file": "apps/storybook/package.json",
-          "hash": "12387395890140251428",
+          "file": "apps/angular-test/project.json",
+          "hash": "6497797947600659382"
+        },
+        {
+          "file": "apps/angular-test/setup-jest.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "apps/angular-test/src/__mocks__/my-org-core-mock.ts",
+          "hash": "6965650116483372642"
+        },
+        {
+          "file": "apps/angular-test/src/tests/ds-button.spec.ts",
+          "hash": "2432830558168446082",
           "deps": [
-            "npm:@storybook/web-components",
-            "npm:@storybook/web-components-vite",
-            "npm:@storybook/addon-essentials",
-            "npm:@storybook/addon-a11y",
-            "npm:storybook",
-            "npm:vite",
-            "core",
-            "npm:lit"
+            "npm:@angular/core",
+            "angular"
           ]
         },
         {
-          "file": "apps/storybook/project.json",
-          "hash": "14734114323459253755"
+          "file": "apps/angular-test/tsconfig.json",
+          "hash": "11494593153743846512"
         },
         {
-          "file": "apps/storybook/stories/ds-button.stories.ts",
-          "hash": "13807473695735202165",
-          "deps": [
-            "npm:@storybook/web-components",
-            "npm:lit"
-          ]
+          "file": "apps/angular-test/tsconfig.spec.json",
+          "hash": "7692885708671606242"
         }
       ],
-      "vue": [
+      "react": [
         {
-          "file": "packages/vue/package.json",
-          "hash": "7233334830414813203",
+          "file": "packages/react/package.json",
+          "hash": "7370461485920431724",
           "deps": [
-            "npm:vue",
+            "npm:react",
+            "npm:react-dom",
             "core",
+            "npm:@types/react",
+            "npm:@types/react-dom",
             "npm:typescript"
           ]
         },
         {
-          "file": "packages/vue/project.json",
-          "hash": "591304041614076851"
+          "file": "packages/react/project.json",
+          "hash": "14233564363988222745"
         },
         {
-          "file": "packages/vue/src/index.ts",
-          "hash": "14536267634179948050"
+          "file": "packages/react/src/index.ts",
+          "hash": "1122250921657481753"
         },
         {
-          "file": "packages/vue/tsconfig.json",
-          "hash": "3808898585100494968"
-        }
-      ],
-      "core": [
-        {
-          "file": "packages/core/package.json",
-          "hash": "7346397894842748242",
-          "deps": [
-            "npm:@stencil/angular-output-target",
-            "npm:@stencil/react-output-target",
-            "npm:@stencil/vue-output-target",
-            "npm:@types/jest",
-            "npm:jest",
-            "npm:jest-cli"
-          ]
-        },
-        {
-          "file": "packages/core/project.json",
-          "hash": "475883207586895645"
-        },
-        {
-          "file": "packages/core/src/components.d.ts",
-          "hash": "10726530415159153185"
-        },
-        {
-          "file": "packages/core/src/components/ds-button/ds-button.css",
-          "hash": "2603258978421972175"
-        },
-        {
-          "file": "packages/core/src/components/ds-button/ds-button.e2e.ts",
-          "hash": "14563725424716747426"
-        },
-        {
-          "file": "packages/core/src/components/ds-button/ds-button.spec.tsx",
-          "hash": "7757427076879378495"
-        },
-        {
-          "file": "packages/core/src/components/ds-button/ds-button.tsx",
-          "hash": "9734437877616587759"
-        },
-        {
-          "file": "packages/core/src/components/ds-button/readme.md",
-          "hash": "13264996796628957873"
-        },
-        {
-          "file": "packages/core/src/global/global.css",
-          "hash": "15076226829454827477"
-        },
-        {
-          "file": "packages/core/src/index.ts",
-          "hash": "1595832445444187531"
-        },
-        {
-          "file": "packages/core/stencil.config.ts",
-          "hash": "16987664482319333835",
-          "deps": [
-            "npm:@stencil/angular-output-target",
-            "npm:@stencil/react-output-target",
-            "npm:@stencil/vue-output-target"
-          ]
-        },
-        {
-          "file": "packages/core/tsconfig.json",
-          "hash": "12695108649062333821"
+          "file": "packages/react/tsconfig.json",
+          "hash": "6305557933962412792"
         }
       ],
       "vue-test": [
@@ -449,6 +456,80 @@
         {
           "file": "apps/vue-test/vitest.config.ts",
           "hash": "11696317821689718464"
+        }
+      ],
+      "vue": [
+        {
+          "file": "packages/vue/package.json",
+          "hash": "7233334830414813203",
+          "deps": [
+            "npm:vue",
+            "core",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "packages/vue/project.json",
+          "hash": "591304041614076851"
+        },
+        {
+          "file": "packages/vue/src/index.ts",
+          "hash": "14536267634179948050"
+        },
+        {
+          "file": "packages/vue/tsconfig.json",
+          "hash": "3808898585100494968"
+        }
+      ],
+      "storybook": [
+        {
+          "file": "apps/storybook/.storybook/main.ts",
+          "hash": "16479875231964150796",
+          "deps": [
+            "npm:@storybook/web-components-vite"
+          ]
+        },
+        {
+          "file": "apps/storybook/.storybook/preview.ts",
+          "hash": "760441541118939581",
+          "deps": [
+            "npm:@storybook/web-components",
+            "core"
+          ]
+        },
+        {
+          "file": "apps/storybook/package.json",
+          "hash": "12387395890140251428",
+          "deps": [
+            "npm:@storybook/web-components",
+            "npm:@storybook/web-components-vite",
+            "npm:@storybook/addon-essentials",
+            "npm:@storybook/addon-a11y",
+            "npm:storybook",
+            "npm:vite",
+            "core",
+            "npm:lit"
+          ]
+        },
+        {
+          "file": "apps/storybook/project.json",
+          "hash": "14734114323459253755"
+        },
+        {
+          "file": "apps/storybook/stories/ds-button.stories.ts",
+          "hash": "13807473695735202165",
+          "deps": [
+            "npm:@storybook/web-components",
+            "npm:lit"
+          ]
+        },
+        {
+          "file": "apps/storybook/stories/ds-card.stories.ts",
+          "hash": "15350549082025590421",
+          "deps": [
+            "npm:@storybook/web-components",
+            "npm:lit"
+          ]
         }
       ]
     }

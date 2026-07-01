@@ -40,29 +40,22 @@ import { Component, Prop, Event, EventEmitter, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class Ds[ComponentName] {
-  // ─── Props ────────────────────────────────────────────────────
-  /** Short description of this prop — appears in auto-generated docs */
+  /** Short description — appears in auto-generated docs */
   @Prop() propName: string = 'default';
 
   /** Whether the component is disabled */
   @Prop({ reflect: true }) disabled: boolean = false;
 
-  // ─── Events ───────────────────────────────────────────────────
   /** Emitted when the value changes */
   @Event() ds[ComponentName]Change: EventEmitter<string>;
 
-  // ─── Lifecycle ────────────────────────────────────────────────
-  componentWillLoad() {
-    // setup before first render
-  }
-
-  // ─── Render ───────────────────────────────────────────────────
   render() {
     return (
       <Host
         class={{
           'ds-[name]': true,
-          'is-disabled': this.disabled,
+          [`ds-[name]--${this.propName}`]: true,
+          'ds-[name]--disabled': this.disabled,
         }}
       >
         <slot />
@@ -73,45 +66,80 @@ export class Ds[ComponentName] {
 ```
 
 **Rules:**
-- Always use `<Host>` as the root element
-- Use `shadow: true` always
-- Add JSDoc comments on every `@Prop` and `@Event` — they become auto-generated docs
-- Use `{ reflect: true }` on props that should mirror as HTML attributes (booleans, ARIA states)
-- Name events with the `ds` prefix to avoid collisions: `dsButtonClick` not `click`
-- Class name is `Ds[ComponentName]` (PascalCase with `Ds` prefix)
+- Always use `<Host>` as the root element; `shadow: true` always
+- JSDoc comment on every `@Prop` and `@Event`
+- Use `{ reflect: true }` on boolean/ARIA props that need HTML attribute mirroring
+- Event names use `ds` prefix: `dsButtonClick`, never `click`
+- Class name: `Ds[ComponentName]`
 
 ### `packages/core/src/components/[tag]/[tag].css`
 
+> **⚠️ Critical: Shadow DOM selector rule**
+>
+> `<Host class={{ 'ds-[name]--variant': true }}>` puts the class on the **custom element itself** (the shadow host), NOT on a child inside the shadow tree.
+>
+> - `.ds-[name]--variant` → matches nothing (looks for a shadow-tree child)
+> - `:host(.ds-[name]--variant)` → correct (matches the host when it has the class)
+>
+> | What has the class | Correct selector |
+> |-------------------|-----------------|
+> | `<Host>` (custom element) | `:host` or `:host(.class)` |
+> | Inner `<div class="body">` | `.body` |
+
+> **⚠️ Critical: Slotted content text color**
+>
+> Slotted content lives in the **light DOM** (the consumer's markup). Shadow CSS does not apply to it directly.
+> If `:host` does not explicitly set `color`, slotted `<p>`, `<span>`, etc. will inherit the browser default
+> (black), which breaks dark-mode cards completely (black text on dark background).
+>
+> **Always set `color` on `:host`** so the cascade reaches slotted children:
+> ```css
+> :host {
+>   color: var(--ds-[name]-text-color);
+> }
+> ```
+
 ```css
 /**
- * @prop --ds-[name]-color: Primary foreground color
- * @prop --ds-[name]-bg: Background color
- * @prop --ds-[name]-padding: Internal padding
- * @prop --ds-[name]-border-radius: Corner radius
+ * @prop --ds-[name]-bg: Surface background
+ * @prop --ds-[name]-text-color: Text color (cascades to slotted content)
+ * @prop --ds-[name]-border-color: Border color
+ * @prop --ds-[name]-radius: Corner radius
  */
 
 :host {
-  --ds-[name]-color: var(--ds-color-primary, #007bff);
-  --ds-[name]-bg: var(--ds-color-surface, #ffffff);
-  --ds-[name]-padding: var(--ds-spacing-md, 12px);
-  --ds-[name]-border-radius: var(--ds-border-radius-md, 4px);
+  --ds-[name]-bg:           var(--ds-color-surface, #ffffff);
+  --ds-[name]-text-color:   var(--ds-color-text, #0f172a);
+  --ds-[name]-border-color: var(--ds-color-border, #e2e8f0);
+  --ds-[name]-radius:       var(--ds-radius-md, 0.375rem);
 
   display: inline-block;
   box-sizing: border-box;
+
+  /* Apply base visual styles on :host so they render. Do NOT put them on .wrapper. */
+  background-color: var(--ds-[name]-bg);
+  /* Set color here so slotted light-DOM children inherit the correct theme color */
+  color: var(--ds-[name]-text-color);
+  border-radius: var(--ds-[name]-radius);
 }
 
+/* Variant classes are on <Host> → use :host(.class) */
+:host(.ds-[name]--variant-name) {
+  --ds-[name]-bg: var(--ds-color-primary-subtle, #eff6ff);
+}
+
+/* Reflected boolean attributes → :host([attr]) */
 :host([disabled]) {
   opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
 }
-```
 
-**Rules:**
-- ALL themeable values must use CSS custom properties
-- CSS vars fall back to global design tokens (`--ds-*`), then hardcoded defaults
-- Document every exposed CSS var with a `@prop` JSDoc comment
-- Use `:host([attr])` for reflected attribute styles, not class selectors
+/* Inner shadow children → normal class selectors */
+.inner-element {
+  color: inherit; /* let :host color cascade */
+}
+```
 
 ### `packages/core/src/components/[tag]/index.ts`
 
@@ -127,57 +155,127 @@ export { Ds[ComponentName] } from './[tag]';
 nx run core:build:dev 2>&1
 ```
 
-**Self-correction loop — run until exit 0:**
-1. Run the command and capture full stdout + stderr
-2. Check exit code — if 0 **and** no `error` / `ERR` lines → break ✅
-3. Read the **complete** error output (never guess from a truncated snippet)
-4. Identify root cause and apply the fix:
-   - Type mismatch on `@Prop` / `@Event` → fix the TypeScript type in the `.tsx`
-   - Missing import (`h`, `Host`, `EventEmitter`, etc.) → add the import
-   - Stencil decorator rule violation → consult CLAUDE.md component authoring guide
-   - CSS file not found → verify `styleUrl` path matches actual file name
-   - Barrel export conflict → check `src/index.ts` for duplicate exports
-5. Re-run `nx run core:build:dev 2>&1` from step 1
-6. After 3 failed attempts on the **same** error: search `stencil-issue-tracker/references/known-issues.md`; document if new
+Self-correction loop until exit 0 with no `error` / `ERR` lines. Common fixes:
+- Type mismatch → fix `.tsx`
+- Missing import (`h`, `Host`, `EventEmitter`) → add import
+- CSS file not found → verify `styleUrl` matches filename
+- Barrel conflict → check `src/index.ts`
 
-Do NOT proceed to Phase 4 or testing until this loop exits successfully.
+After 3 failed attempts on the same error: check `stencil-issue-tracker/references/known-issues.md`.
 
 ---
 
 ## PHASE 4: Update Barrel Export
 
-Add the new component to the library's root barrel if one exists:
-
 ```bash
 ls packages/core/src/index.ts 2>/dev/null
 ```
 
-If found, add:
-```typescript
-export * from './components/[tag]';
+If found, append: `export * from './components/[tag]';`
+
+---
+
+## PHASE 5: Visual Self-Verification Loop
+
+**Mandatory. A passing build does not mean a correct-looking component.**
+
+This loop runs after Storybook stories exist (see `storybook-component` skill). Keep iterating until every check below passes.
+
+### Step 1 — Take a screenshot
+
+Start Storybook dev server and take a screenshot of the Default story:
+
+```bash
+source ~/.nvm/nvm.sh && nvm use 20
+# Start in background
+cd apps/storybook && pnpm exec storybook dev -p 6006 --ci &
+until curl -s http://localhost:6006 > /dev/null 2>&1; do sleep 2; done
 ```
+
+Then use the Claude Preview MCP or browser MCP:
+- URL: `http://localhost:6006/iframe.html?id=design-system-[componentname]--default&viewMode=story`
+- Take a screenshot and visually inspect the result
+
+### Step 2 — Evaluate against the checklist
+
+**Structural checklist** — does it look like the industry-standard version of this component type?
+
+| Component type | Required visual markers |
+|----------------|------------------------|
+| Card | Visible border OR shadow; background distinct from page canvas; internal padding |
+| Button | Solid or bordered background; readable label; cursor pointer |
+| Input | Visible border; legible placeholder; focus ring |
+| Badge | Colored background; rounded corners; tight padding |
+| Alert | Left accent border or colored background |
+
+**Universal checklist (every component):**
+- [ ] Background is distinct from the Storybook canvas (white-on-white = invisible card)
+- [ ] Body/slot text is readable against the card background (not default black on dark surface)
+- [ ] Heading text is readable against the card background
+- [ ] Dividers and borders are perceptible (not same color as background)
+- [ ] Padding gives the component visible breathing room
+- [ ] Hover/focus states are perceptible on interactive components
+
+**Contrast & accessibility checklist (non-negotiable):**
+- [ ] **WCAG AA contrast** — normal body text must be ≥ 4.5:1 against its background
+- [ ] **WCAG AA contrast** — large/bold headings must be ≥ 3:1 against their background
+- [ ] **Dark mode** — if the canvas is dark, ALL text (including slotted content) must be light, not black
+- [ ] **Light mode** — if the canvas is light, ALL text must be dark, not white
+- [ ] **Never rely on color alone** to convey information — use shape, label, or icon alongside color
+- [ ] **Colorblind safe** — do not use red/green as the only distinction between states; test mentally by imagining the reds and greens as the same gray
+
+To compute contrast ratio manually: `(L1 + 0.05) / (L2 + 0.05)` where L is relative luminance.
+Quick check: `#0f172a` (dark) on `#273548` (dark blue) → both dark → **fail**. `#f1f5f9` (near white) on `#273548` → **pass**.
+
+### Step 3 — Fix and loop
+
+If any check fails:
+
+1. **Selector mismatch** (styles not applying at all)
+   - Classes on `<Host>` → change `.ds-[name]--class` to `:host(.ds-[name]--class)` in CSS
+   - Verify with: `page.root.classList.contains('ds-[name]--class')` in a spec test
+
+2. **Slotted text wrong color** (black text on dark background)
+   - Add `color: var(--ds-[name]-text-color)` to `:host {}`
+   - `--ds-[name]-text-color` must fall back to `--ds-color-text` (which dark-mode overrides to `#f1f5f9`)
+
+3. **Token not resolving** (fallback to browser default)
+   - Confirm `global.css` is imported in `apps/storybook/.storybook/preview.ts`
+   - Add explicit hardcoded fallbacks: `var(--ds-color-text, #0f172a)`
+
+4. **Contrast fails**
+   - Replace subtle token (e.g. `--ds-color-text-subtle` = `#64748b`) with full-contrast token (`--ds-color-text`)
+   - Or darken/lighten the background token used
+
+5. Rebuild: `cd packages/core && pnpm exec stencil build --dev`
+6. Retake screenshot → re-evaluate checklist → loop until all items pass
+
+**Do not mark the component complete until every checklist item passes.**
 
 ---
 
 ## Complete
 
-Report back:
 ```
 ✅ ds-[name] component created
    packages/core/src/components/ds-[name]/ds-[name].tsx
    packages/core/src/components/ds-[name]/ds-[name].css
    packages/core/src/components/ds-[name]/index.ts
-✅ Dev build passing  (nx run core:build:dev)
+✅ Dev build passing
+✅ Visual verification: screenshot passes all structural, contrast, and colorblind checks
 ```
 
 ---
 
 ## Definition of Success
 
-- [ ] All three component files are created: `.tsx` source, `.css` styles, `index.ts` barrel
-- [ ] The component uses `<Host>` as the root element and `shadow: true`
-- [ ] Every `@Prop` and `@Event` has a JSDoc comment
-- [ ] All themeable values use CSS custom properties with global token fallbacks
-- [ ] `nx run core:build:dev` exits with no errors after the component is added
-- [ ] If `packages/core/src/index.ts` exists, the new component is exported from it
-- [ ] The success report with all three file paths is returned to the calling agent
+- [ ] All three files created: `.tsx`, `.css`, `index.ts`
+- [ ] `<Host>` as root element; `shadow: true`; JSDoc on every `@Prop` / `@Event`
+- [ ] `:host(.class)` selectors used for all host-applied variant classes
+- [ ] `color` property set on `:host` so slotted content inherits the correct theme color
+- [ ] All themeable values use `--ds-*` tokens with hardcoded fallbacks
+- [ ] `nx run core:build:dev` exits with no errors
+- [ ] Barrel export updated if `src/index.ts` exists
+- [ ] **Screenshot passes the visual checklist** — component looks like its industry-standard counterpart
+- [ ] **WCAG AA contrast passes** for all text/background combinations in both light and dark mode
+- [ ] **No color-only information** — shape, label, or icon used alongside color cues

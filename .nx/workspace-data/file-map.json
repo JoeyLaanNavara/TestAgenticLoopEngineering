@@ -19,36 +19,76 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".gitignore",
-        "hash": "14977591499973151183"
+        "file": ".claude/skills/framework-integration-testing/SKILL.md",
+        "hash": "5923793160941497233"
       },
       {
-        "file": ".claude/skills/stencil-testing/references/testing-patterns.md",
-        "hash": "7808620224082394856"
+        "file": "CLAUDE.md",
+        "hash": "2386161861615345596"
       },
       {
-        "file": ".claude/skills/stencil-e2e-test/SKILL.md",
-        "hash": "1963681604515144634"
+        "file": ".claude/skills/stencil-e2e-test/references/playwright-patterns.md",
+        "hash": "17018831376114716420"
       },
       {
         "file": ".claude/skills/structured-handoff/SKILL.md",
         "hash": "9001696172893641455"
       },
       {
-        "file": ".claude/skills/structured-handoff/references/HANDOFF_INDEX.md",
-        "hash": "10895696693120346657"
+        "file": ".claude/skills/stencil-e2e-test/SKILL.md",
+        "hash": "1963681604515144634"
       },
       {
-        "file": ".claude/skills/framework-integration-testing/SKILL.md",
-        "hash": "5923793160941497233"
+        "file": ".claude/skills/stencil-issue-tracker/SKILL.md",
+        "hash": "15258783160508806051"
       },
       {
-        "file": ".claude/skills/component-library-mcp/references/mcp-tools-reference.md",
-        "hash": "14105545424454844983"
+        "file": "pnpm-workspace.yaml",
+        "hash": "12244558599086013871"
       },
       {
-        "file": ".claude/skills/stencil-component-build/SKILL.md",
-        "hash": "266617293585767922"
+        "file": ".claude/commands/build-component.md",
+        "hash": "14590432336366470818"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "7305247897161806016"
+      },
+      {
+        "file": ".claude/skills/stencil-bootstrap/SKILL.md",
+        "hash": "5798554064165176932"
+      },
+      {
+        "file": "package.json",
+        "hash": "14811118491301378877"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "14743000810602433389"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "17416571130773066304"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1076048326898268193"
+      },
+      {
+        "file": ".claude/skills/framework-integration-testing/references/test-patterns.md",
+        "hash": "12877868914978220978"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "14977591499973151183"
+      },
+      {
+        "file": "DESIGN.md",
+        "hash": "1455157821413797604"
+      },
+      {
+        "file": ".claude/skills/stencil-unit-test/SKILL.md",
+        "hash": "8414066851744440046"
       },
       {
         "file": ".claude/settings.json",
@@ -59,80 +99,40 @@
         "hash": "236253381864344921"
       },
       {
-        "file": ".claude/skills/stencil-unit-test/references/unit-test-patterns.md",
-        "hash": "4265627379576683485"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "17416571130773066304"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "12244558599086013871"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "7305247897161806016"
-      },
-      {
         "file": ".npmrc",
         "hash": "1978261448481785746"
-      },
-      {
-        "file": "package.json",
-        "hash": "14811118491301378877"
-      },
-      {
-        "file": ".claude/skills/stencil-testing/SKILL.md",
-        "hash": "16359835552626288760"
-      },
-      {
-        "file": "DESIGN.md",
-        "hash": "1455157821413797604"
-      },
-      {
-        "file": ".claude/skills/stencil-e2e-test/references/playwright-patterns.md",
-        "hash": "17018831376114716420"
-      },
-      {
-        "file": "CLAUDE.md",
-        "hash": "2386161861615345596"
-      },
-      {
-        "file": ".claude/commands/build-component.md",
-        "hash": "14590432336366470818"
-      },
-      {
-        "file": ".claude/skills/stencil-issue-tracker/references/known-issues.md",
-        "hash": "6244918541081768287"
-      },
-      {
-        "file": ".claude/skills/stencil-issue-tracker/SKILL.md",
-        "hash": "15258783160508806051"
-      },
-      {
-        "file": ".claude/skills/framework-integration-testing/references/test-patterns.md",
-        "hash": "12877868914978220978"
       },
       {
         "file": ".claude/skills/component-library-mcp/SKILL.md",
         "hash": "11298697153740419153"
       },
       {
-        "file": ".nvmrc",
-        "hash": "14743000810602433389"
+        "file": ".claude/skills/stencil-unit-test/references/unit-test-patterns.md",
+        "hash": "4265627379576683485"
       },
       {
-        "file": ".claude/skills/stencil-bootstrap/SKILL.md",
-        "hash": "5798554064165176932"
+        "file": ".claude/skills/component-library-mcp/references/mcp-tools-reference.md",
+        "hash": "14105545424454844983"
       },
       {
-        "file": "nx.json",
-        "hash": "1076048326898268193"
+        "file": ".claude/skills/stencil-testing/SKILL.md",
+        "hash": "16359835552626288760"
       },
       {
-        "file": ".claude/skills/stencil-unit-test/SKILL.md",
-        "hash": "8414066851744440046"
+        "file": ".claude/skills/stencil-issue-tracker/references/known-issues.md",
+        "hash": "6244918541081768287"
+      },
+      {
+        "file": ".claude/skills/stencil-component-build/SKILL.md",
+        "hash": "12349516521060919145"
+      },
+      {
+        "file": ".claude/skills/stencil-testing/references/testing-patterns.md",
+        "hash": "7808620224082394856"
+      },
+      {
+        "file": ".claude/skills/structured-handoff/references/HANDOFF_INDEX.md",
+        "hash": "10895696693120346657"
       }
     ],
     "projectFileMap": {
@@ -194,7 +194,7 @@
         },
         {
           "file": "packages/core/src/components/ds-card/ds-card.css",
-          "hash": "15958542988528215547"
+          "hash": "16474123663173604918"
         },
         {
           "file": "packages/core/src/components/ds-card/ds-card.spec.tsx",
@@ -210,7 +210,7 @@
         },
         {
           "file": "packages/core/src/components/ds-card/readme.md",
-          "hash": "11702764769292703448"
+          "hash": "14056149190077674146"
         },
         {
           "file": "packages/core/src/components/index.ts",
@@ -525,7 +525,7 @@
         },
         {
           "file": "apps/storybook/stories/ds-card.stories.ts",
-          "hash": "15350549082025590421",
+          "hash": "9293179498448795472",
           "deps": [
             "npm:@storybook/web-components",
             "npm:lit"

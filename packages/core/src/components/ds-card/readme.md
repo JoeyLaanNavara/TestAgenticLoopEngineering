@@ -26,17 +26,16 @@
 
 ## CSS Custom Properties
 
-| Name                         | Description                                           |
-| ---------------------------- | ----------------------------------------------------- |
-| `--ds-card-bg`               | Card surface background color                         |
-| `--ds-card-border-color`     | Border color (used in `outlined` variant and default) |
-| `--ds-card-divider-color`    | Color of internal dividers (header/footer borders)    |
-| `--ds-card-heading-color`    | Color of the heading text                             |
-| `--ds-card-padding`          | Internal padding (overridden by the `padding` prop)   |
-| `--ds-card-radius`           | Corner border radius                                  |
-| `--ds-card-shadow`           | Resting box shadow                                    |
-| `--ds-card-shadow-hover`     | Box shadow applied on hover for clickable cards       |
-| `--ds-card-subheading-color` | Color of the subheading / body text                   |
+| Name                         | Description                           |
+| ---------------------------- | ------------------------------------- |
+| `--ds-card-bg`               | Card surface background color         |
+| `--ds-card-border-color`     | Border color                          |
+| `--ds-card-divider-color`    | Color of internal dividers            |
+| `--ds-card-heading-color`    | Color of the heading text             |
+| `--ds-card-radius`           | Corner border radius                  |
+| `--ds-card-shadow`           | Resting box shadow                    |
+| `--ds-card-shadow-hover`     | Box shadow on hover (clickable cards) |
+| `--ds-card-subheading-color` | Color of the subheading text          |
 
 
 ----------------------------------------------

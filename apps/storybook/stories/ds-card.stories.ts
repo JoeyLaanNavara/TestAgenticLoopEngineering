@@ -24,6 +24,7 @@ const meta: Meta<DsCardArgs> = {
       ?clickable=${args.clickable}
       ?disabled=${args.disabled}
       padding=${args.padding}
+      style="max-width: 400px;"
     >
       <p>Card body content goes here. Use the default slot for any markup.</p>
     </ds-card>

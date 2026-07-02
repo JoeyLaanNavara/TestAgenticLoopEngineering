@@ -12,7 +12,10 @@
     "build:core:dev": "nx run core:build:dev",
     "dev": "nx run core:start",
     "test:core": "nx test core",
-    "test:e2e": "nx run core:test:e2e"
+    "test:e2e": "nx run core:test:e2e",
+    "design-lint": "node scripts/design-lint.mjs",
+    "loop:context": "node scripts/loop/session-context.mjs",
+    "loop:log": "node scripts/loop/log.mjs"
   },
   "devDependencies": {
     "@nx/workspace": "^20.0.0",

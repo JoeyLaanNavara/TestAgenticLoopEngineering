@@ -219,7 +219,7 @@ cd packages/core && pnpm exec playwright test [name] 2>&1
    - Dev server not starting → confirm `pnpm exec stencil build --dev --serve` starts on port 3333
    - Playwright browser missing → run `pnpm exec playwright install chromium`
 5. Apply the fix, then re-run from step 1
-6. After 3 failed attempts on the **same** error: search `stencil-issue-tracker/references/known-issues.md`; document if new
+6. **Loop Budget** (see [`../_shared/loop-budget.md`](../_shared/loop-budget.md)): two failures are the *same error* only if `node scripts/loop/same-error.mjs` returns the same key. Retry a given error at most **3×**; stop after **10** total fix attempts in this skill. On every resolved error you **must** log it via `stencil-issue-tracker` POST-ERROR (append if new, increment recurrence if known) — not optional. If the budget is exceeded, escalate: log the blocker, run `bash scripts/loop/rollback.sh <mode> <tag>`, write a `blocked` structured-handoff, and stop.
 
 Do NOT mark e2e complete until the loop exits with 0 failures.
 

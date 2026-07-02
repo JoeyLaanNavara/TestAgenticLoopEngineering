@@ -108,7 +108,7 @@ nx run core:build:dev 2>&1
    - Config syntax error → fix `stencil.config.ts`
    - Node version too old → verify `node --version` ≥ 18; switch with `nvm use` if needed
 5. Re-run `nx run core:build:dev 2>&1` from step 1
-6. After 3 failed attempts on the **same** error: search `stencil-issue-tracker/references/known-issues.md` for a match; document as a new issue if not found
+6. **Loop Budget** (see [`../_shared/loop-budget.md`](../_shared/loop-budget.md)): two failures are the *same error* only if `node scripts/loop/same-error.mjs` returns the same key. Retry a given error at most **3×**; stop after **10** total fix attempts. On every resolved error you **must** log it via `stencil-issue-tracker` POST-ERROR (append if new, increment recurrence if known) — not optional. If the budget is exceeded, escalate: log the blocker, write a `blocked` structured-handoff, and stop (do not begin component work on a broken bootstrap).
 
 Do not proceed to Phase 4 until this loop exits successfully.
 

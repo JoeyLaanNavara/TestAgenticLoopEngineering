@@ -22,3 +22,6 @@ storybook-static/
 *.log
 .env
 .env.local
+
+# Autonomous loop run logs
+.claude/loop-logs/

@@ -4,5 +4,21 @@
       "command": "node",
       "args": ["mcp-server/dist/index.js"]
     }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node scripts/loop/session-context.mjs" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node scripts/loop/check-handoff.mjs" }
+        ]
+      }
+    ]
   }
 }

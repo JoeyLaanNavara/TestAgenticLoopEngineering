@@ -161,7 +161,7 @@ Self-correction loop until exit 0 with no `error` / `ERR` lines. Common fixes:
 - CSS file not found → verify `styleUrl` matches filename
 - Barrel conflict → check `src/index.ts`
 
-After 3 failed attempts on the same error: check `stencil-issue-tracker/references/known-issues.md`.
+**Loop Budget** (see [`../_shared/loop-budget.md`](../_shared/loop-budget.md)): two failures are the *same error* only if `node scripts/loop/same-error.mjs` returns the same key. Retry a given error at most **3×**; stop after **10** total fix attempts. On every resolved error you **must** log it via `stencil-issue-tracker` POST-ERROR — not optional. If the budget is exceeded, escalate: log the blocker, run `bash scripts/loop/rollback.sh create <tag>`, write a `blocked` structured-handoff, and stop.
 
 ---
 
@@ -248,9 +248,19 @@ If any check fails:
    - Or darken/lighten the background token used
 
 5. Rebuild: `cd packages/core && pnpm exec stencil build --dev`
-6. Retake screenshot → re-evaluate checklist → loop until all items pass
+6. Retake screenshot → re-evaluate checklist → loop, but **bounded to 5 visual cycles** (the subjective-stage cap in [`../_shared/loop-budget.md`](../_shared/loop-budget.md)). If still failing after 5, stop and record the remaining items as a `manual-review-required` note in the handoff — do not loop forever on a subjective check.
 
-**Do not mark the component complete until every checklist item passes.**
+### Step 4 — Objective gate (the terminal "done" signal)
+
+The checklist above is human guidance; the machine-checkable gate that an autonomous run terminates on is `design-lint`:
+
+```bash
+node scripts/design-lint.mjs [tag]
+```
+
+It enforces the mechanical `DESIGN.md` rules (tokens-only, known `--ds-*` tokens, `:host` present, `prefers-reduced-motion` wrapper around transitions/animations) and computes WCAG contrast where tokens resolve to hex.
+
+**The component is complete when `design-lint` reports `pass: true` (exit 0)** and the ≤5-cycle visual pass surfaced no blocking issue. A `design-lint` failure means NOT done — fix the reported violations (under the Loop Budget) and re-run.
 
 ---
 

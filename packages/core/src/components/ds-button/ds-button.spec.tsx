@@ -43,7 +43,7 @@ describe('ds-button', () => {
       html: '<ds-button disabled></ds-button>',
     });
     const button = page.root?.shadowRoot?.querySelector('button');
-    expect(button?.disabled).toBe(true);
+    expect(button?.hasAttribute('disabled')).toBe(true);
   });
 
   it('emits dsClick event when clicked', async () => {

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "nx run-many --target=build --all",
-    "test": "nx run-many --target=test --all",
-    "lint": "nx run-many --target=lint --all",
+    "build": "nx run-many --target=build --all --exclude=angular12-dashboard",
+    "test": "nx run-many --target=test --all --exclude=angular12-dashboard",
+    "lint": "nx run-many --target=lint --all --exclude=angular12-dashboard",
     "storybook": "nx run storybook:storybook",
     "storybook:build": "nx run storybook:build-storybook",
     "build:core": "nx build core",
@@ -15,11 +15,18 @@
     "test:e2e": "nx run core:test:e2e",
     "design-lint": "node scripts/design-lint.mjs",
     "loop:context": "node scripts/loop/session-context.mjs",
-    "loop:log": "node scripts/loop/log.mjs"
+    "loop:log": "node scripts/loop/log.mjs",
+    "start:storybook": "nx run storybook:storybook",
+    "start:dashboard": "cd apps/angular12-dashboard && NODE_OPTIONS=--openssl-legacy-provider npx ng serve",
+    "test:angular-test": "nx test angular-test",
+    "test:react-test": "nx test react-test",
+    "test:vue-test": "nx test vue-test",
+    "test:dashboard": "cd apps/angular12-dashboard && npx ng test"
   },
   "devDependencies": {
     "@nx/workspace": "^20.0.0",
     "nx": "^20.0.0",
+    "rxjs": "^7.8.0",
     "typescript": "^5.4.0"
   },
   "engines": {

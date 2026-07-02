@@ -15,7 +15,13 @@
     "test:e2e": "nx run core:test:e2e",
     "design-lint": "node scripts/design-lint.mjs",
     "loop:context": "node scripts/loop/session-context.mjs",
-    "loop:log": "node scripts/loop/log.mjs"
+    "loop:log": "node scripts/loop/log.mjs",
+    "start:storybook": "nx run storybook:storybook",
+    "start:dashboard": "cd apps/angular12-dashboard && npx ng serve",
+    "test:angular-test": "nx test angular-test",
+    "test:react-test": "nx test react-test",
+    "test:vue-test": "nx test vue-test",
+    "test:dashboard": "cd apps/angular12-dashboard && npx ng test"
   },
   "devDependencies": {
     "@nx/workspace": "^20.0.0",

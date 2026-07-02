@@ -1,0 +1,10 @@
+<nav class="sidebar">
+  <div class="sidebar-logo">Dashboard</div>
+  <div class="sidebar-nav">
+    <a
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive="active"
+    >{{ link.label }}</a>
+  </div>
+</nav>

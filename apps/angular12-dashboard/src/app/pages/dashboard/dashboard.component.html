@@ -1,0 +1,18 @@
+<h1>Dashboard</h1>
+
+<div class="stat-grid">
+  <div class="stat-card" *ngFor="let stat of stats">
+    <div class="value">{{ stat.value }}</div>
+    <div class="label">{{ stat.label }}</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Recent Activity</h2>
+  <ul class="activity-list">
+    <li *ngFor="let activity of activities" class="activity-item">
+      <strong>{{ activity.user }}</strong> {{ activity.action }}
+      <span class="time">{{ activity.time }}</span>
+    </li>
+  </ul>
+</div>

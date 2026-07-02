@@ -12,7 +12,13 @@
     "build:core:dev": "nx run core:build:dev",
     "dev": "nx run core:start",
     "test:core": "nx test core",
-    "test:e2e": "nx run core:test:e2e"
+    "test:e2e": "nx run core:test:e2e",
+    "start:storybook": "nx run storybook:storybook",
+    "start:dashboard": "cd apps/angular12-dashboard && npx ng serve",
+    "test:angular-test": "nx test angular-test",
+    "test:react-test": "nx test react-test",
+    "test:vue-test": "nx test vue-test",
+    "test:dashboard": "cd apps/angular12-dashboard && npx ng test"
   },
   "devDependencies": {
     "@nx/workspace": "^20.0.0",

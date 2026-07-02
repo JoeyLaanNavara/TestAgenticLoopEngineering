@@ -9,6 +9,8 @@ describe('ds-button', () => {
     });
     const button = page.root?.shadowRoot?.querySelector('button');
     expect(button).toBeTruthy();
+    // INTENTIONAL FAILURE — showcase CI webhook
+    expect('actual').toBe('expected');
   });
 
   it('renders with custom label prop', async () => {

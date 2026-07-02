@@ -17,7 +17,7 @@
     "loop:context": "node scripts/loop/session-context.mjs",
     "loop:log": "node scripts/loop/log.mjs",
     "start:storybook": "nx run storybook:storybook",
-    "start:dashboard": "cd apps/angular12-dashboard && npx ng serve",
+    "start:dashboard": "cd apps/angular12-dashboard && NODE_OPTIONS=--openssl-legacy-provider npx ng serve",
     "test:angular-test": "nx test angular-test",
     "test:react-test": "nx test react-test",
     "test:vue-test": "nx test vue-test",

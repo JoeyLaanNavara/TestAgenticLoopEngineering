@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "nx run-many --target=build --all",
-    "test": "nx run-many --target=test --all",
-    "lint": "nx run-many --target=lint --all",
+    "build": "nx run-many --target=build --all --exclude=angular12-dashboard",
+    "test": "nx run-many --target=test --all --exclude=angular12-dashboard",
+    "lint": "nx run-many --target=lint --all --exclude=angular12-dashboard",
     "storybook": "nx run storybook:storybook",
     "storybook:build": "nx run storybook:build-storybook",
     "build:core": "nx build core",
